@@ -1,7 +1,7 @@
 cm-categories
 ==========
 
-Common Address Module (Frenzel GmbH 2014) v.0.1
+Common Categories Module (Frenzel GmbH 2014) v.0.1
 
 Installation
 ============
@@ -19,7 +19,7 @@ php yii migrate --migrationPath=@vendor/frenzelgmbh/cm-categories/migrations
 Inside your yii-config, pls. add the following lines to your modules section. As you
 might see, the gridview needs to be implemented too.
 ```
-'communication'=>[
+'cmcategories'=>[
   'class' => 'frenzelgmbh\cmcategories\Module',
 ],
 'gridview' =>  [
@@ -29,7 +29,7 @@ might see, the gridview needs to be implemented too.
 
 After this, you should be able to see the set of build in widgets and options under:
 
-http://yourhost/index.php?r=communication/default/test
+http://yourhost/index.php?r=cmcategories/default/test
 
 Design
 ======
@@ -42,13 +42,10 @@ So in general all modules are referenced by:
 
 Datastructure
 =============
-This module allows you to store communication data related to any other "record" and "module" you pass by as parameters.
-It allows you to save 1:n communication records, while one record of communication can be filled with the following fields:
-* Communication Type (INTEGER) References communication_type table
-* Phone
-* Mobile
-* Fax
-* EMail
+This module allows you to store cmcategories data related to any other "record" and "module" you pass by as parameters.
+It allows you to save 1:n cmcategories records, while one record of cmcategories can be filled with the following fields:
+* Parent_id (self reference)
+* Name
 Pls. notice, that records aren't deleted in all of our models, they just get marked as deleted!
 
 Widgets
@@ -56,8 +53,8 @@ Widgets
 
 The "create"-Button:
 ```php
-if(class_exists('\frenzelgmbh\cmcategories\widgets\CreateCommunicationModal')){
-  echo \frenzelgmbh\cmcategories\widgets\CreateCommunicationModal::widget(array(
+if(class_exists('\frenzelgmbh\cmcategories\widgets\CreateCategoriesModal')){
+  echo \frenzelgmbh\cmcategories\widgets\CreateCategoriesModal::widget(array(
     'module'      => 'tbl_test',
     'id'          => 1
   )); 
@@ -66,8 +63,8 @@ if(class_exists('\frenzelgmbh\cmcategories\widgets\CreateCommunicationModal')){
 
 The "related"-Grid:
 ```php
-if(class_exists('\frenzelgmbh\cmcategories\widgets\RelatedCommunicationGrid')){
-  echo \frenzelgmbh\cmcategories\widgets\RelatedCommunicationGrid::widget(array(
+if(class_exists('\frenzelgmbh\cmcategories\widgets\RelatedCategoriesGrid')){
+  echo \frenzelgmbh\cmcategories\widgets\RelatedCategoriesGrid::widget(array(
     'module'      => 'tbl_test',
     'id'          => 1
   )); 
