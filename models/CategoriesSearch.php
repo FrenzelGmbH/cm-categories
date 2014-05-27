@@ -5,18 +5,18 @@ namespace frenzelgmbh\cmcategories\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frenzelgmbh\cmcategories\models\Communication;
+use frenzelgmbh\cmcategories\models\Categories;
 
 /**
- * CommunicationSearch represents the model behind the search form about `app\models\Communication`.
+ * CategoriesSearch represents the model behind the search form about `app\models\Categories`.
  */
-class CommunicationSearch extends Communication
+class CategoriesSearch extends Categories
 {
     public function rules()
     {
         return [
-            [['id', 'user_id', 'mod_id', 'system_upate', 'created_at', 'updated_at', 'deleted_at', 'communication_type_id'], 'integer'],
-            [['mobile', 'phone', 'fax', 'email', 'mod_table', 'system_key', 'system_name'], 'safe'],
+            [['id', 'user_id', 'mod_id', 'system_upate', 'created_at', 'updated_at', 'deleted_at', 'parent'], 'integer'],
+            [['name', 'mod_table', 'system_key', 'system_name'], 'safe'],
         ];
     }
 
@@ -28,7 +28,7 @@ class CommunicationSearch extends Communication
 
     public function search($params)
     {
-        $query = Communication::find();
+        $query = Categories::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -46,13 +46,9 @@ class CommunicationSearch extends Communication
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'deleted_at' => $this->deleted_at,
-            'communication_type_id' => $this->communication_type_id,
         ]);
 
-        $query->andFilterWhere(['like', 'mobile', $this->mobile])
-            ->andFilterWhere(['like', 'phone', $this->phone])
-            ->andFilterWhere(['like', 'fax', $this->fax])
-            ->andFilterWhere(['like', 'email', $this->email])
+        $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'mod_table', $this->mod_table])
             ->andFilterWhere(['like', 'system_key', $this->system_key])
             ->andFilterWhere(['like', 'system_name', $this->system_name]);

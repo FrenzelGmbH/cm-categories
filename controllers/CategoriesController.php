@@ -3,18 +3,24 @@
 namespace frenzelgmbh\cmcategories\controllers;
 
 use Yii;
-use frenzelgmbh\cmcategories\models\Communication;
-use frenzelgmbh\cmcategories\models\CommunicationSearch;
-use yii\web\Controller;
+use frenzelgmbh\cmcategories\models\Categories;
+use frenzelgmbh\cmcategories\models\CategoriesSearch;
 use yii\web\NotFoundHttpException;
+use frenzelgmbh\appcommon\controllers\AppController;
 use yii\helpers\Json;
 use yii\filters\VerbFilter;
 
 /**
- * CommunicationController implements the CRUD actions for Communication model.
+ * CategoriesController implements the CRUD actions for Categories model.
  */
-class CommunicationController extends Controller
+class CategoriesController extends AppController
 {
+    /**
+     * Set the default layout to the modules view column2
+     * @var string
+     */
+    public $layout = 'column2';
+
     public function behaviors()
     {
         return [
@@ -28,12 +34,12 @@ class CommunicationController extends Controller
     }
 
     /**
-     * Lists all Communication models.
+     * Lists all Categories models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CommunicationSearch;
+        $searchModel = new CategoriesSearch;
         $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
 
         return $this->render('index', [
@@ -43,7 +49,7 @@ class CommunicationController extends Controller
     }
 
     /**
-     * Displays a single Communication model.
+     * Displays a single Categories model.
      * @param integer $id
      * @return mixed
      */
@@ -55,13 +61,13 @@ class CommunicationController extends Controller
     }
 
     /**
-     * Creates a new Communication model.
+     * Creates a new Categories model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Communication;
+        $model = new Categories;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             if (Yii::$app->request->isAjax) 
@@ -75,14 +81,14 @@ class CommunicationController extends Controller
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
-            return $this->render('create', [
+            return $this->renderAjax('create', [
                 'model' => $model,
             ]);
         }
     }
 
     /**
-     * Updates an existing Communication model.
+     * Updates an existing Categories model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -101,7 +107,7 @@ class CommunicationController extends Controller
     }
 
     /**
-     * Deletes an existing Communication model.
+     * Deletes an existing Categories model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -114,15 +120,15 @@ class CommunicationController extends Controller
     }
 
     /**
-     * Finds the Communication model based on its primary key value.
+     * Finds the Categories model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Communication the loaded model
+     * @return Categories the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Communication::findOne($id)) !== null) {
+        if (($model = Categories::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

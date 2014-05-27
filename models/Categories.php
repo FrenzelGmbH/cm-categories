@@ -6,13 +6,11 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 
 /**
- * This is the model class for table "communication".
+ * This is the model class for table "categories".
  *
  * @property integer $id
- * @property string $mobile
- * @property string $phone
- * @property string $fax
- * @property string $email
+ * @property integer $parent
+ * @property string $name
  * @property integer $user_id
  * @property string $mod_table
  * @property integer $mod_id
@@ -22,18 +20,17 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $created_at
  * @property integer $updated_at
  * @property integer $deleted_at
- * @property integer $communication_type_id
  *
- * @property CommunicationType $communicationType
+ * @property Categrories $Categrories
  */
-class Communication extends \yii\db\ActiveRecord
+class categories extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%communication}}';
+        return '{{%categories}}';
     }
 
     /**
@@ -52,9 +49,8 @@ class Communication extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'mod_id', 'system_upate', 'created_at', 'updated_at', 'deleted_at', 'communication_type_id'], 'integer'],
-            [['mobile', 'phone', 'fax'], 'string', 'max' => 200],
-            [['email'],'email'],
+            [['user_id', 'mod_id', 'system_upate', 'created_at', 'updated_at', 'deleted_at','parent'], 'integer'],
+            [['name'], 'string', 'max' => 200],            
             [['mod_table', 'system_key', 'system_name'], 'string', 'max' => 100]
         ];
     }
@@ -66,10 +62,8 @@ class Communication extends \yii\db\ActiveRecord
     {
         return [
             'id'                    => Yii::t('cm-categories', 'ID'),
-            'mobile'                => Yii::t('cm-categories', 'Mobile'),
-            'phone'                 => Yii::t('cm-categories', 'Phone'),
-            'fax'                   => Yii::t('cm-categories', 'Fax'),
-            'email'                 => Yii::t('cm-categories', 'Email'),
+            'parent'                => Yii::t('cm-categories', 'Parent'),
+            'name'                  => Yii::t('cm-categories', 'Name'),
             'user_id'               => Yii::t('cm-categories', 'User ID'),
             'mod_table'             => Yii::t('cm-categories', 'Mod Table'),
             'mod_id'                => Yii::t('cm-categories', 'Mod ID'),
@@ -78,16 +72,24 @@ class Communication extends \yii\db\ActiveRecord
             'system_upate'          => Yii::t('cm-categories', 'System Upate'),
             'created_at'            => Yii::t('cm-categories', 'Created At'),
             'updated_at'            => Yii::t('cm-categories', 'Updated At'),
-            'deleted_at'            => Yii::t('cm-categories', 'Deleted At'),
-            'communication_type_id' => Yii::t('cm-categories', 'Communication Type'),
+            'deleted_at'            => Yii::t('cm-categories', 'Deleted At'),            
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCommunicationType()
+    public function getParentCategory()
     {
-        return $this->hasOne(CommunicationType::className(), ['id' => 'communication_type_id']);
+        return $this->hasOne(Categrories::className(), ['parent' => 'id']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCategories()
+    {
+        return $this->hasMany(Categrories::className(), ['id' => 'parent']);
+    }
+
 }
