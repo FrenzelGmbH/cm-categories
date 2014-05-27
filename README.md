@@ -34,7 +34,7 @@ http://yourhost/index.php?r=cmcategories/default/test
 Design
 ======
 
-The Address module is use to store address/location informations, that can be linked to any other "module".
+The Categories module is use to store address/location informations, that can be linked to any other "module".
 So in general all modules are referenced by:
 
 * mod_table (which should hold the table name VARCHAR(100))
