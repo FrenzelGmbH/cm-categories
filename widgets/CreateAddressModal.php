@@ -1,6 +1,6 @@
 <?php
 
-namespace frenzelgmbh\cmcommunication\widgets;
+namespace frenzelgmbh\cmcategories\widgets;
 
 use Yii;
 use frenzelgmbh\appcommon\widgets\Portlet;
@@ -41,7 +41,7 @@ class CreateAddressModal extends Portlet
 	 * @return bool the result of the parent init call
 	 */
 	public function init() {		
-		\frenzelgmbh\cmcommunication\addressAsset::register(\Yii::$app->view);
+		\frenzelgmbh\cmcategories\addressAsset::register(\Yii::$app->view);
 		return parent::init();
 	}
 
@@ -51,7 +51,7 @@ class CreateAddressModal extends Portlet
 	 */
 	protected function renderContent()
 	{
-		echo $this->render('@frenzelgmbh/cmcommunication/widgets/views/_create_modal',[
+		echo $this->render('@frenzelgmbh/cmcategories/widgets/views/_create_modal',[
 			'module' => $this->module,
 			'id'		 => $this->id
 		]);

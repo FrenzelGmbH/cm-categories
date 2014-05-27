@@ -1,6 +1,6 @@
 <?php
 
-namespace frenzelgmbh\cmcommunication\controllers;
+namespace frenzelgmbh\cmcategories\controllers;
 
 use Yii;
 use yii\filters\VerbFilter;
@@ -8,8 +8,8 @@ use yii\helpers\Json;
 
 use frenzelgmbh\appcommon\controllers\AppController;
 
-use frenzelgmbh\cmcommunication\models\Address;
-use frenzelgmbh\cmcommunication\models\Country;
+use frenzelgmbh\cmcategories\models\Address;
+use frenzelgmbh\cmcategories\models\Country;
 
 class DefaultController extends AppController
 {
@@ -103,7 +103,7 @@ class DefaultController extends AppController
         $model->mod_table = $module;
         $model->mod_id = $id;  
       }
-      return $this->renderAjax('@frenzelgmbh/cmcommunication/widgets/views/iviews/_form', [
+      return $this->renderAjax('@frenzelgmbh/cmcategories/widgets/views/iviews/_form', [
           'model' => $model,
       ]);
     }

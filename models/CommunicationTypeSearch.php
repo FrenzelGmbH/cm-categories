@@ -1,11 +1,11 @@
 <?php
 
-namespace frenzelgmbh\cmcommunication\models;
+namespace frenzelgmbh\cmcategories\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frenzelgmbh\cmcommunication\models\CommunicationType;
+use frenzelgmbh\cmcategories\models\CommunicationType;
 
 /**
  * CommunicationTypeSearch represents the model behind the search form about `app\models\CommunicationType`.

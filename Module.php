@@ -1,6 +1,6 @@
 <?php
 
-namespace frenzelgmbh\cmcommunication;
+namespace frenzelgmbh\cmcategories;
 
 use yii\base\Module as BaseModule;
 
@@ -30,12 +30,12 @@ class Module extends BaseModule {
     {
         parent::init();
         $this->setAliases([
-            '@cmcommunication' => dirname(__FILE__)
+            '@cmcategories' => dirname(__FILE__)
         ]);
-        \Yii::$app->i18n->translations['cm-communication'] = [
+        \Yii::$app->i18n->translations['cm-categories'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@frenzelgmbh/cmcommunication/messages',
+            'basePath' => '@frenzelgmbh/cmcategories/messages',
         ];
         //get the displayed view and register the needed assets
         //as we have no view in this context we need to make the way over the $app->view

@@ -2,7 +2,7 @@
 
 use yii\helpers\Url;
 
-use frenzelgmbh\cmcommunication\models\CommunicationType;
+use frenzelgmbh\cmcategories\models\CommunicationType;
 
 use kartik\helpers\Html;
 use kartik\widgets\ActiveForm;

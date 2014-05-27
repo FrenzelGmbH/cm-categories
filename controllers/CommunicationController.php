@@ -1,10 +1,10 @@
 <?php
 
-namespace frenzelgmbh\cmcommunication\controllers;
+namespace frenzelgmbh\cmcategories\controllers;
 
 use Yii;
-use frenzelgmbh\cmcommunication\models\Communication;
-use frenzelgmbh\cmcommunication\models\CommunicationSearch;
+use frenzelgmbh\cmcategories\models\Communication;
+use frenzelgmbh\cmcategories\models\CommunicationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\helpers\Json;

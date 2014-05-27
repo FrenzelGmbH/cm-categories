@@ -5,7 +5,7 @@
       <?= $this->blocks['sidebar']; ?>
     </div>
     <div class="col-md-8">
-      <div class="cm-communication">
+      <div class="cm-categories">
         <?= $content; ?>
       </div>
     </div>

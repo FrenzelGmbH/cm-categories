@@ -4,7 +4,7 @@
  * @author Philipp Frenzel <philipp@frenzel.net> 
  */
 
-namespace frenzelgmbh\cmcommunication;
+namespace frenzelgmbh\cmcategories;
 
 use yii\web\AssetBundle;
 
@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
  */
 class communicationAsset extends AssetBundle
 {
-    public $sourcePath = '@frenzelgmbh/cmcommunication/assets';
+    public $sourcePath = '@frenzelgmbh/cmcategories/assets';
     
     public $css = [
         'css/cm-categories.css'

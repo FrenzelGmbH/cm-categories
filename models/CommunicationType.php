@@ -1,6 +1,6 @@
 <?php
 
-namespace frenzelgmbh\cmcommunication\models;
+namespace frenzelgmbh\cmcategories\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -58,15 +58,15 @@ class CommunicationType extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'           => Yii::t('cm-communication', 'ID'),
-            'name'         => Yii::t('cm-communication', 'Name'),
-            'user_id'      => Yii::t('cm-communication', 'User ID'),
-            'system_key'   => Yii::t('cm-communication', 'System Key'),
-            'system_name'  => Yii::t('cm-communication', 'System Name'),
-            'system_upate' => Yii::t('cm-communication', 'System Upate'),
-            'created_at'   => Yii::t('cm-communication', 'Created At'),
-            'updated_at'   => Yii::t('cm-communication', 'Updated At'),
-            'deleted_at'   => Yii::t('cm-communication', 'Deleted At'),
+            'id'           => Yii::t('cm-categories', 'ID'),
+            'name'         => Yii::t('cm-categories', 'Name'),
+            'user_id'      => Yii::t('cm-categories', 'User ID'),
+            'system_key'   => Yii::t('cm-categories', 'System Key'),
+            'system_name'  => Yii::t('cm-categories', 'System Name'),
+            'system_upate' => Yii::t('cm-categories', 'System Upate'),
+            'created_at'   => Yii::t('cm-categories', 'Created At'),
+            'updated_at'   => Yii::t('cm-categories', 'Updated At'),
+            'deleted_at'   => Yii::t('cm-categories', 'Deleted At'),
         ];
     }
 

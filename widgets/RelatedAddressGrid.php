@@ -1,11 +1,11 @@
 <?php
 
-namespace frenzelgmbh\cmcommunication\widgets;
+namespace frenzelgmbh\cmcategories\widgets;
 
 use Yii;
 
-use frenzelgmbh\cmcommunication\models\Address;
-use frenzelgmbh\cmcommunication\models\AddressSearch;
+use frenzelgmbh\cmcategories\models\Address;
+use frenzelgmbh\cmcategories\models\AddressSearch;
 
 use frenzelgmbh\appcommon\widgets\Portlet;
 
@@ -45,7 +45,7 @@ class RelatedAddressGrid extends Portlet
 	 * @return bool the result of the parent init call
 	 */
 	public function init() {		
-		\frenzelgmbh\cmcommunication\addressAsset::register(\Yii::$app->view);
+		\frenzelgmbh\cmcategories\addressAsset::register(\Yii::$app->view);
 		return parent::init();
 	}
 
@@ -58,7 +58,7 @@ class RelatedAddressGrid extends Portlet
 		$searchModel = new AddressSearch;
     $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams(),$this->module,$this->id);
 
-    echo $this->render('@frenzelgmbh/cmcommunication/widgets/views/_address_grid', [
+    echo $this->render('@frenzelgmbh/cmcategories/widgets/views/_address_grid', [
         'dataProvider' => $dataProvider,
         'searchModel' => $searchModel,
     ]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace frenzelgmbh\cmcommunication\models;
+namespace frenzelgmbh\cmcategories\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
@@ -65,21 +65,21 @@ class Communication extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'                    => Yii::t('cm-communication', 'ID'),
-            'mobile'                => Yii::t('cm-communication', 'Mobile'),
-            'phone'                 => Yii::t('cm-communication', 'Phone'),
-            'fax'                   => Yii::t('cm-communication', 'Fax'),
-            'email'                 => Yii::t('cm-communication', 'Email'),
-            'user_id'               => Yii::t('cm-communication', 'User ID'),
-            'mod_table'             => Yii::t('cm-communication', 'Mod Table'),
-            'mod_id'                => Yii::t('cm-communication', 'Mod ID'),
-            'system_key'            => Yii::t('cm-communication', 'System Key'),
-            'system_name'           => Yii::t('cm-communication', 'System Name'),
-            'system_upate'          => Yii::t('cm-communication', 'System Upate'),
-            'created_at'            => Yii::t('cm-communication', 'Created At'),
-            'updated_at'            => Yii::t('cm-communication', 'Updated At'),
-            'deleted_at'            => Yii::t('cm-communication', 'Deleted At'),
-            'communication_type_id' => Yii::t('cm-communication', 'Communication Type'),
+            'id'                    => Yii::t('cm-categories', 'ID'),
+            'mobile'                => Yii::t('cm-categories', 'Mobile'),
+            'phone'                 => Yii::t('cm-categories', 'Phone'),
+            'fax'                   => Yii::t('cm-categories', 'Fax'),
+            'email'                 => Yii::t('cm-categories', 'Email'),
+            'user_id'               => Yii::t('cm-categories', 'User ID'),
+            'mod_table'             => Yii::t('cm-categories', 'Mod Table'),
+            'mod_id'                => Yii::t('cm-categories', 'Mod ID'),
+            'system_key'            => Yii::t('cm-categories', 'System Key'),
+            'system_name'           => Yii::t('cm-categories', 'System Name'),
+            'system_upate'          => Yii::t('cm-categories', 'System Upate'),
+            'created_at'            => Yii::t('cm-categories', 'Created At'),
+            'updated_at'            => Yii::t('cm-categories', 'Updated At'),
+            'deleted_at'            => Yii::t('cm-categories', 'Deleted At'),
+            'communication_type_id' => Yii::t('cm-categories', 'Communication Type'),
         ];
     }
 

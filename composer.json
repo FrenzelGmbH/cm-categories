@@ -1,5 +1,5 @@
 {
-  "name": "frenzelgmbh/cm-communication",
+  "name": "frenzelgmbh/cm-categories",
   "description": "Common Address Module for yii2",
   "keywords": [
     "yii2",
@@ -9,8 +9,8 @@
   "type": "yii2-extension",
   "license": "GPL v2",
   "support": {
-    "issues": "https://github.com/frenzelgmbh/cm-communication/issues?state=open",
-    "source": "https://github.com/frenzelgmbh/cm-communication"
+    "issues": "https://github.com/frenzelgmbh/cm-categories/issues?state=open",
+    "source": "https://github.com/frenzelgmbh/cm-categories"
   },
   "authors": [
     {
@@ -21,16 +21,11 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "frenzelgmbh/appcommon":"dev-master",
-    "anthonymartin/geo-location":"dev-master",
-    "willdurand/geocoder": "dev-master",
-    "2amigos/yii2-leaflet-markercluster-plugin": "*",
-    "2amigos/yii2-leaflet-extension": "*",
-    "2amigos/yii2-leaflet-makimarker-plugin": "*"
+    "frenzelgmbh/appcommon":"dev-master"
   },
   "autoload": {
     "psr-4": {
-      "frenzelgmbh\\cmcommunication\\": ""
+      "frenzelgmbh\\cmcategories\\": ""
     }
   }
 }

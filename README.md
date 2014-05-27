@@ -1,4 +1,4 @@
-cm-communication
+cm-categories
 ==========
 
 Common Address Module (Frenzel GmbH 2014) v.0.1
@@ -13,7 +13,7 @@ Add the following line to your composer.json require section:
 ```
 
 ```
-php yii migrate --migrationPath=@vendor/frenzelgmbh/cm-communication/migrations
+php yii migrate --migrationPath=@vendor/frenzelgmbh/cm-categories/migrations
 ```
 
 Inside your yii-config, pls. add the following lines to your modules section. As you

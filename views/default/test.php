@@ -8,7 +8,7 @@ use yii\helpers\Html;
  * @var integer $id
  */
 
-$this->title = Yii::t('cm-communication', 'test');
+$this->title = Yii::t('cm-categories', 'test');
 ?>
 
 <div class="posts-default-index">
@@ -27,8 +27,8 @@ $this->title = Yii::t('cm-communication', 'test');
 		</div>
 
 		<?php 
-      if(class_exists('\frenzelgmbh\cmcommunication\widgets\CreateAddressModal')){
-        echo \frenzelgmbh\cmcommunication\widgets\CreateAddressModal::widget(array(
+      if(class_exists('\frenzelgmbh\cmcategories\widgets\CreateAddressModal')){
+        echo \frenzelgmbh\cmcategories\widgets\CreateAddressModal::widget(array(
           'module'      => 'cm_address_test',
           'id'          => 1
         )); 
@@ -50,8 +50,8 @@ $this->title = Yii::t('cm-communication', 'test');
     </div>
 
     <?php 
-      if(class_exists('\frenzelgmbh\cmcommunication\widgets\RelatedAddressGrid')){
-        echo \frenzelgmbh\cmcommunication\widgets\RelatedAddressGrid::widget(array(
+      if(class_exists('\frenzelgmbh\cmcategories\widgets\RelatedAddressGrid')){
+        echo \frenzelgmbh\cmcategories\widgets\RelatedAddressGrid::widget(array(
           'module'      => 'cm_address_test',
           'id'          => 1
         )); 
@@ -70,8 +70,8 @@ $this->title = Yii::t('cm-communication', 'test');
     </div>
 
     <?php 
-      if(class_exists('\frenzelgmbh\cmcommunication\widgets\IPLocation')){
-        echo \frenzelgmbh\cmcommunication\widgets\IPLocation::widget(); 
+      if(class_exists('\frenzelgmbh\cmcategories\widgets\IPLocation')){
+        echo \frenzelgmbh\cmcategories\widgets\IPLocation::widget(); 
       }
     ?>
 
