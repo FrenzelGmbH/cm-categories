@@ -77,6 +77,26 @@ class categories extends \yii\db\ActiveRecord
     }
 
     /**
+     * This is invoked before the record is saved.
+     * @return boolean whether the record should be saved.
+     */
+    public function beforeSave($insert)
+    {       
+        if ($insert) 
+        {
+            if(!Yii::$app->user->isGuest)
+            {
+                $this->user_id=Yii::$app->user->identity->id;
+            }
+            else
+            {
+                $this->user_id=NULL;
+            }
+        }
+        return parent::beforeSave($insert);
+    }
+
+    /**
      * @return \yii\db\ActiveQuery
      */
     public function getParentCategory()
@@ -90,6 +110,16 @@ class categories extends \yii\db\ActiveRecord
     public function getCategories()
     {
         return $this->hasMany(Categrories::className(), ['id' => 'parent']);
+    }
+
+    /**
+     * returns all categories as an array for a pull down element in html
+     * @param integer module the value of the related module
+     * @return array of categories
+     */
+    public static function pdCategories($module)
+    {
+        return ArrayHelper::map(self::find()->where(['mod_table'=>$module])->orderBy('name')->asArray()->all(), 'id', 'name');
     }
 
 }
