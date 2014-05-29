@@ -12,7 +12,7 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class communicationAsset extends AssetBundle
+class categoriesAsset extends AssetBundle
 {
     public $sourcePath = '@frenzelgmbh/cmcategories/assets';
     
