@@ -16,17 +16,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'parent')->textInput() ?>
 
-    <?= $form->field($model, 'cat_module') ?>
-
-    <?= $form->field($model, 'creator_id') ?>
-
-    <?= $form->field($model, 'time_deleted') ?>
-
-    <?= $form->field($model, 'time_create') ?>
+    <?= $form->field($model, 'mod_table') ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => 200]) ?>
-
-    <?= $form->field($model, 'status') ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
