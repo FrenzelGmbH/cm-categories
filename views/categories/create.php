@@ -4,16 +4,16 @@ use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
- * @var app\models\Communication $model
+ * @var app\modules\categories\models\Categories $model
  */
 
 $this->title = Yii::t('app', 'Create {modelClass}', [
-    'modelClass' => 'Communication',
+    'modelClass' => 'Categories',
 ]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Communications'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Categories'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="communication-create">
+<div class="categories-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

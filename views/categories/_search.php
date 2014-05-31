@@ -5,12 +5,12 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var app\models\CommunicationTypeSearch $model
+ * @var app\modules\categories\models\CategoriesSearch $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>
 
-<div class="communication-type-search">
+<div class="categories-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -23,9 +23,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'user_id') ?>
 
-    <?= $form->field($model, 'system_key') ?>
+    <?= $form->field($model, 'mod_table') ?>
 
-    <?= $form->field($model, 'system_name') ?>
+    <?= $form->field($model, 'mod_id') ?>
+
+    <?php // echo $form->field($model, 'system_key') ?>
+
+    <?php // echo $form->field($model, 'system_name') ?>
 
     <?php // echo $form->field($model, 'system_upate') ?>
 
@@ -34,6 +38,8 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'updated_at') ?>
 
     <?php // echo $form->field($model, 'deleted_at') ?>
+
+    <?php // echo $form->field($model, 'parent') ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>

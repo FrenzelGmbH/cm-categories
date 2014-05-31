@@ -4,17 +4,17 @@ use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
- * @var app\models\CommunicationType $model
+ * @var app\modules\categories\models\Categories $model
  */
 
 $this->title = Yii::t('app', 'Update {modelClass}: ', [
-    'modelClass' => 'Communication Type',
+    'modelClass' => 'Categories',
 ]) . ' ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Communication Types'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Categories'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
-<div class="communication-type-update">
+<div class="categories-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
