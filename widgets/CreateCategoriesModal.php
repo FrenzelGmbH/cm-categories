@@ -11,18 +11,18 @@ use frenzelgmbh\appcommon\widgets\Portlet;
  * @copyright Copyright (c) 2014, Frenzel GmbH
  */
 
-class CreateAddressModal extends Portlet
+class CreateCategoriesModal extends Portlet
 {
 	/**
 	 * const WIDGET_NAME must be defined for all widgets!
 	 */
-	const WIDGET_NAME = 'CreateAddressModal';
+	const WIDGET_NAME = 'CREATE_CATEGORIES_MODAL';
 	
 	/**
 	 * [$title description]
 	 * @var string title that will be displayed when enabling Admin Portlet
 	 */
-	public $title='Create Address';
+	public $title='Create Category';
 	
 	/**
 	 * [$module description]
@@ -41,7 +41,7 @@ class CreateAddressModal extends Portlet
 	 * @return bool the result of the parent init call
 	 */
 	public function init() {		
-		\frenzelgmbh\cmcategories\addressAsset::register(\Yii::$app->view);
+		\frenzelgmbh\cmcategories\categoriesAsset::register(\Yii::$app->view);
 		return parent::init();
 	}
 

@@ -11,7 +11,7 @@ use yii\helpers\Html;
 $this->title = Yii::t('cm-categories', 'test');
 ?>
 
-<div class="posts-default-index">
+<div class="categories-default-test">
 	<h1><?= $this->context->action->uniqueId; ?></h1>
 	
 	<fieldset>
@@ -27,10 +27,9 @@ $this->title = Yii::t('cm-categories', 'test');
 		</div>
 
 		<?php 
-      if(class_exists('\frenzelgmbh\cmcategories\widgets\CreateAddressModal')){
-        echo \frenzelgmbh\cmcategories\widgets\CreateAddressModal::widget(array(
-          'module'      => 'cm_address_test',
-          'id'          => 1
+      if(class_exists('\frenzelgmbh\cmcategories\widgets\CreateCategoriesModal')){
+        echo \frenzelgmbh\cmcategories\widgets\CreateCategoriesModal::widget(array(
+          'module'      => '99'
         )); 
       }
     ?>
@@ -38,40 +37,21 @@ $this->title = Yii::t('cm-categories', 'test');
 	</fieldset>
 
   <fieldset>
-    <legend>Related Address Grid</legend>
+    <legend>Related Categories Grid</legend>
 
     <div class="well">
       <p>
         Here we make the test for the related address grid 
         which renders an asscociated address to the passed over: <br>
         * MODULE <br>
-        * ID <br>
       </p>
     </div>
 
     <?php 
-      if(class_exists('\frenzelgmbh\cmcategories\widgets\RelatedAddressGrid')){
-        echo \frenzelgmbh\cmcategories\widgets\RelatedAddressGrid::widget(array(
-          'module'      => 'cm_address_test',
-          'id'          => 1
+      if(class_exists('\frenzelgmbh\cmcategories\widgets\RelatedCategoriesGrid')){
+        echo \frenzelgmbh\cmcategories\widgets\RelatedCategoriesGrid::widget(array(
+          'module'      => '99'
         )); 
-      }
-    ?>
-
-  </fieldset>
-
-  <fieldset>
-    <legend>IP Location</legend>
-
-    <div class="well">
-      <p>
-        IP Location, based upon the information we get from the enviroment variables.
-      </p>
-    </div>
-
-    <?php 
-      if(class_exists('\frenzelgmbh\cmcategories\widgets\IPLocation')){
-        echo \frenzelgmbh\cmcategories\widgets\IPLocation::widget(); 
       }
     ?>
 

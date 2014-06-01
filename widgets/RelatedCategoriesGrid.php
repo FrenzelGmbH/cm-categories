@@ -4,8 +4,8 @@ namespace frenzelgmbh\cmcategories\widgets;
 
 use Yii;
 
-use frenzelgmbh\cmcategories\models\Address;
-use frenzelgmbh\cmcategories\models\AddressSearch;
+use frenzelgmbh\cmcategories\models\Categories;
+use frenzelgmbh\cmcategories\models\CategoriesSearch;
 
 use frenzelgmbh\appcommon\widgets\Portlet;
 
@@ -15,18 +15,18 @@ use frenzelgmbh\appcommon\widgets\Portlet;
  * @copyright Copyright (c) 2014, Frenzel GmbH
  */
 
-class RelatedAddressGrid extends Portlet
+class RelatedCategoriesGrid extends Portlet
 {
 	/**
 	 * const WIDGET_NAME must be defined for all widgets!
 	 */
-	const WIDGET_NAME = 'RelatedAddressGrid';
+	const WIDGET_NAME = 'RELATED_CATEGORIES_GRID';
 	
 	/**
 	 * [$title description]
 	 * @var string title that will be displayed when enabling Admin Portlet
 	 */
-	public $title='Related Addresses';
+	public $title='Related Categories';
 	
 	/**
 	 * [$module description]
@@ -35,17 +35,11 @@ class RelatedAddressGrid extends Portlet
 	public $module = NULL;
 
 	/**
-	 * [$id description]
-	 * @var integer id that is the primarey key value of the reference value
-	 */
-	public $id = NULL;
-
-	/**
 	 * [init description]
 	 * @return bool the result of the parent init call
 	 */
 	public function init() {		
-		\frenzelgmbh\cmcategories\addressAsset::register(\Yii::$app->view);
+		\frenzelgmbh\cmcategories\categoriesAsset::register(\Yii::$app->view);
 		return parent::init();
 	}
 
@@ -55,13 +49,13 @@ class RelatedAddressGrid extends Portlet
 	 */
 	protected function renderContent()
 	{
-		$searchModel = new AddressSearch;
-    $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams(),$this->module,$this->id);
+		$searchModel = new CategoriesSearch;
+    	$dataProvider = $searchModel->search(Yii::$app->request->getQueryParams(),$this->module);
 
-    echo $this->render('@frenzelgmbh/cmcategories/widgets/views/_address_grid', [
-        'dataProvider' => $dataProvider,
-        'searchModel' => $searchModel,
-    ]);
+	    echo $this->render('@frenzelgmbh/cmcategories/widgets/views/_categories_grid', [
+	        'dataProvider' => $dataProvider,
+	        'searchModel' => $searchModel,
+	    ]);
 	}
 
 }
