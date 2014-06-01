@@ -1,14 +1,7 @@
-<?php $this->beginContent('@adminui/themes/layouts/main.php'); ?>
+<?php $this->beginContent('@adminUi/themes/layouts/main.php'); ?>
 <div id="content">
-  <div class="row">
-    <div class="col-md-4">      
-      <?= $this->blocks['sidebar']; ?>
-    </div>
-    <div class="col-md-8">
-      <div class="cm-categories">
-        <?= $content; ?>
-      </div>
-    </div>
-  </div> 
+  <div class="cm-categories">
+    <?= $content; ?>
+  </div>
 </div><!-- container -->
 <?php $this->endContent(); ?>
