@@ -1,7 +1,9 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use yii\helpers\Url;
+use kartik\grid\GridView;
+use kartik\widgets\SideNav;
 
 /**
  * @var yii\web\View $this
@@ -9,10 +11,27 @@ use yii\grid\GridView;
  * @var app\modules\categories\models\CategoriesSearch $searchModel
  */
 
-$this->title = Yii::t('app', 'Categories');
+$this->title = Yii::t('cm-catgories', 'Categories');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="categories-index">
+
+<?php yii\widgets\Block::begin(array('id'=>'sidebar')); ?>
+
+    <?php 
+    $sideMenu = array();
+    $sideMenu[] = array('icon'=>'book','label'=>Yii::t('cm-catgories','Categories'),'url'=>Url::to(array('/categories/categories/index')));
+    $sideMenu[] = array('icon'=>'plus','label'=>Yii::t('cm-catgories','New Category'),'url'=>Url::to(array('/categories/categories/create')));
+
+    echo SideNav::widget([
+      'type' => SideNav::TYPE_INFO,
+      'heading' => Yii::t('cm-catgories','Categories Menu'),
+      'items' => $sideMenu
+    ]);
+  ?>
+
+<?php yii\widgets\Block::end(); ?>
+
+<div class="workbench">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

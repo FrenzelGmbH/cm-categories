@@ -119,7 +119,27 @@ class categories extends \yii\db\ActiveRecord
      */
     public static function pdCategories($module)
     {
-        return ArrayHelper::map(self::find()->where(['mod_table'=>$module])->orderBy('name')->asArray()->all(), 'id', 'name');
+        $returnme = [];
+        $returnme[] = array('0'=>'NONE AVAILABLE! Gibts net!');
+        $returnme[] = ArrayHelper::map(self::find()->where(['mod_table'=>$module])->orderBy('name')->asArray()->all(), 'id', 'name');
+        return $returnme;
+    }
+
+    /**
+     * this returns a list of for this app configured modules, pls
+     * be carefull with the order of the modules, that you register
+     * as the order is relevant for the connection to this module
+     */
+    public static function pdModules()
+    {
+        $counter = 0;
+        $returnme = [];
+        $returnme[] = [$counter=>'NONE AVAILABLE! Gibts net!'];
+        foreach(\Yii::$app->modules AS $name => $config)
+        {
+            $returnme[] = [$counter++ => $name];
+        }
+        return $returnme;
     }
 
 }

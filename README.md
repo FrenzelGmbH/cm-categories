@@ -38,13 +38,15 @@ The Categories module is use to store categories, that can be linked to any othe
 So in general all modules are referenced by:
 
 * mod_table (which should hold the table name VARCHAR(100))
-* mod_id    (which should hold the primarey key of the referenced record INTEGER(11))
+
+ATTENTION:
+ be carefull with the order of the modules, that you register as the order is relevant for the connection to this module. Categories can be assigned to each module, that you configure within your app config.
 
 Datastructure
 =============
 This module allows you to store cmcategories data related to any other "record" and "module" you pass by as parameters.
 It allows you to save 1:n cmcategories records, while one record of cmcategories can be filled with the following fields:
-* Parent_id (self reference)
+* Parent (self reference)
 * Name
 Pls. notice, that records aren't deleted in all of our models, they just get marked as deleted!
 
