@@ -58,10 +58,10 @@ Pjax::begin();
             [
                 'attribute' => 'mod_table',
                 'value' => function($model, $index, $widget){
-                    return Html::tag('div',$model->ModelString);
-                }
-            ]
-            'mod_table',
+                    return Html::tag('div',$model->moduleString);
+                },
+                'format' => 'raw'
+            ],
             // 'mod_id',
             // 'system_key',
             // 'system_name',
