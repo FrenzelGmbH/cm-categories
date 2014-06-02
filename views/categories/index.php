@@ -12,7 +12,7 @@ use yii\widgets\Pjax;
  * @var app\modules\categories\models\CategoriesSearch $searchModel
  */
 
-$this->title = Yii::t('cm-catgories', 'Categories');
+$this->title = Yii::t('cm-categories', 'Categories');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -20,12 +20,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php 
     $sideMenu = array();
-    $sideMenu[] = array('icon'=>'book','label'=>Yii::t('cm-catgories','Categories'),'url'=>Url::to(array('/categories/categories/index')));
-    $sideMenu[] = array('icon'=>'plus','label'=>Yii::t('cm-catgories','New Category'),'url'=>Url::to(array('/categories/categories/create')));
+    $sideMenu[] = array('icon'=>'book','label'=>Yii::t('cm-categories','Categories'),'url'=>Url::to(array('/categories/categories/index')));
+    $sideMenu[] = array('icon'=>'plus','label'=>Yii::t('cm-categories','New Category'),'url'=>Url::to(array('/categories/categories/create')));
 
     echo SideNav::widget([
       'type' => SideNav::TYPE_INFO,
-      'heading' => Yii::t('cm-catgories','Categories Menu'),
+      'heading' => Yii::t('cm-categories','Categories Menu'),
       'items' => $sideMenu
     ]);
   ?>
