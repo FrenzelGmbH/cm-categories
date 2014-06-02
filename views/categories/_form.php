@@ -2,8 +2,8 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\widgets\ActiveForm;
-use yii\widgets\DepDrop;
+use kartik\widgets\ActiveForm;
+use kartik\widgets\DepDrop;
 
 /**
  * @var yii\web\View $this
@@ -23,7 +23,7 @@ use yii\widgets\DepDrop;
     <?= $form->field($model, 'parent')->widget(DepDrop::classname(),[
     		'options' => ['id'=>'parent-id'],
     		'pluginOptions' => [
-    			'depends' => 'mod_table-id',
+    			'depends' => ['mod_table-id'],
     			'placeholder' => 'Select ...',
     			'url' => Url::to(['/categories/categories/jsoncategories'])
     		]

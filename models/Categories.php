@@ -127,6 +127,19 @@ class categories extends \yii\db\ActiveRecord
     }
 
     /**
+     * returns all categories as an array for a pull down element in html
+     * @param integer module the value of the related module
+     * @return array of categories
+     */
+    public static function jsCategories($module)
+    {
+        $returnme = [];
+        $returnme[] = ['0' => 'NONE AVAILABLE! Gibts net!'];
+        $returnme[] = ArrayHelper::map(self::find()->where(['mod_table'=>$module])->orderBy('name')->asArray()->all(), 'id', 'name');
+        return $returnme;
+    }
+
+    /**
      * this returns a list of for this app configured modules, pls
      * be carefull with the order of the modules, that you register
      * as the order is relevant for the connection to this module

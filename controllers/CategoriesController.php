@@ -158,7 +158,7 @@ class CategoriesController extends AppController
             if($parents != null)
             {
                 $mod_table = $parents[0];
-                $out = Categories::pdCategories($mod_table);
+                $out = Categories::jsCategories($mod_table);
                 echo Json::encode(['output'=>$out,'selected'=>'']);
                 return;
             }
