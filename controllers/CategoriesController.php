@@ -150,6 +150,7 @@ class CategoriesController extends AppController
      */
     public function actionJsoncategories()
     {
+        header('Content-type: application/json');
         $out = [];
         if(isset($_POST['depdrop_parents']))
         {
