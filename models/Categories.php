@@ -143,4 +143,10 @@ class categories extends \yii\db\ActiveRecord
         return $returnme;
     }
 
+    public function getModuleString()
+    {
+        $modules = self::pdModules();
+        return $modules[$this->mod_table];
+    }
+
 }

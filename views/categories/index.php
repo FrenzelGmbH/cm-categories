@@ -55,6 +55,12 @@ Pjax::begin();
             'id',
             'name',
             'user_id',
+            [
+                'attribute' => 'mod_table',
+                'value' => function($model, $index, $widget){
+                    return Html::tag('div',$model->ModelString);
+                }
+            ]
             'mod_table',
             // 'mod_id',
             // 'system_key',
