@@ -23,25 +23,26 @@ Pjax::begin();
         'hover' => true,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'zipCode',
-            'cityName',
-            //'postBox',
-            'addresslineOne',
-            'addresslineTwo',
-            // 'regionName',
-            // 'user_id',
-            // 'mod_table',
+            'id',
+            'name',
+            'user_id',
+            'mod_table',
             // 'mod_id',
             // 'system_key',
             // 'system_name',
             // 'system_upate',
             // 'created_at',
             // 'updated_at',
-            // 'country_id',
+            // 'deleted_at',
+            // 'parent',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
+        'panel' => [
+            'heading' => '<h3 class="panel-title"><i class="glyphicon glyphicon-globe"></i> Categories</h3>',
+            'type' => 'success',
+            'showFooter' => false
+        ]
     ]);
 
 Pjax::end(); 

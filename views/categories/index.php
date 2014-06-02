@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use kartik\grid\GridView;
 use kartik\widgets\SideNav;
+use yii\widgets\Pjax;
 
 /**
  * @var yii\web\View $this
@@ -42,17 +43,20 @@ $this->params['breadcrumbs'][] = $this->title;
 ]), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
+    <?php
+    
+Pjax::begin();
+
+    echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'name',
             'user_id',
             'mod_table',
-            'mod_id',
+            // 'mod_id',
             // 'system_key',
             // 'system_name',
             // 'system_upate',
@@ -68,6 +72,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'type' => 'success',
             'showFooter' => false
         ]
-    ]); ?>
+    ]); 
+
+Pjax::end();
+    ?>
 
 </div>
