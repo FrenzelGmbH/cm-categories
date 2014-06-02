@@ -122,7 +122,7 @@ class categories extends \yii\db\ActiveRecord
     {
         $returnme = [];
         $returnme[0] = 'NONE AVAILABLE! Gibts net!';
-        $returnme = ArrayHelper::merge(ArrayHelper::map(self::find()->where(['mod_table'=>$module])->orderBy('name')->asArray()->all(), 'id', 'name'));
+        $returnme = ArrayHelper::merge($returnme,ArrayHelper::map(self::find()->where(['mod_table'=>$module])->orderBy('name')->asArray()->all(), 'id', 'name'));
         return $returnme;
     }
 
@@ -135,7 +135,7 @@ class categories extends \yii\db\ActiveRecord
     {
         $counter = 0;
         $returnme = [];
-        $returnme[$counter] = 'NONE AVAILABLE! Gibts net!';
+        $returnme[$counter++] = 'NONE AVAILABLE! Gibts net!';
         foreach(\Yii::$app->modules AS $name => $config)
         {
             $returnme[$counter++] = $name;
