@@ -143,4 +143,27 @@ class CategoriesController extends AppController
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    /**
+     * this produces an json array with the available categories for the passed
+     * over module.
+     */
+    public function actionJsoncategories()
+    {
+        $out = [];
+        if(isset($_POST['depdrop_parents']))
+        {
+            $parents = $_POST['depdrop_parents'];
+            if($parents != null)
+            {
+                $mod_table = $parents[0];
+                $out = Categories::pdCategories($mod_table);
+                echo Json::encode(['output'=>$out,'selected'=>'']);
+                return;
+            }
+        }
+        echo Json::encode(['output'=>'','selected'=>'']);
+        exit;
+    }
+
 }
