@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     echo SideNav::widget([
       'type' => SideNav::TYPE_INFO,
-      'heading' => Yii::t('cm-categories','Categories Menu'),
+      'heading' => \Yii::t('cm-categories','Categories Menu'),
       'items' => $sideMenu
     ]);
   ?>
@@ -34,14 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="workbench">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a(Yii::t('app', 'Create {modelClass}', [
-    'modelClass' => 'Categories',
-]), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <h1 class="page-header"><?= Html::encode($this->title) ?></h1>
 
     <?php
     
@@ -76,6 +69,8 @@ Pjax::begin();
         'panel' => [
             'heading' => '<h3 class="panel-title"><i class="glyphicon glyphicon-globe"></i> Categories</h3>',
             'type' => 'success',
+            'before'=>Html::a('<i class="glyphicon glyphicon-plus"></i> Create Category', ['create'], ['class' => 'btn btn-success']),
+            'after'=>Html::a('<i class="glyphicon glyphicon-repeat"></i> Reset Grid', ['index'], ['class' => 'btn btn-info']),
             'showFooter' => false
         ]
     ]); 
