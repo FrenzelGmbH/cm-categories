@@ -63,6 +63,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
+        'panel' => [
+            'heading' => '<h3 class="panel-title"><i class="glyphicon glyphicon-globe"></i> Categories</h3>',
+            'type' => 'success',
+            'showFooter' => false
+        ]
     ]); ?>
 
 </div>
