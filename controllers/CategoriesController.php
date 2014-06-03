@@ -80,20 +80,36 @@ class CategoriesController extends AppController
             {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
-        } else {
-            if (Yii::$app->request->isAjax)
+        }
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * Creates a new Categories model by an ajax request.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreateajax()
+    {
+        $model = new Categories;
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if (Yii::$app->request->isAjax) 
             {
-                return $this->renderAjax('create', [
-                    'model' => $model,
-                ]);
+                header('Content-type: application/json');
+                echo Json::encode(['status'=>'DONE','model'=>$model]);
+                exit();
             }
             else
             {
-                return $this->render('create', [
-                    'model' => $model,
-                ]);
+                return $this->redirect(['view', 'id' => $model->id]);
             }
         }
+        return $this->renderAjax('create', [
+            'model' => $model,
+        ]);
     }
 
     /**

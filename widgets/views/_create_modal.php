@@ -33,7 +33,7 @@ MODALJS;
 ?>
 
 <?= Html::a(\Yii::t('app','Create'), [
-    '/categories/default/create',
+    '/categories/default/createajax',
     'module' => $module, 
     'id' => $id,
   ], 
