@@ -56,8 +56,7 @@ class DefaultController extends AppController
    */
 	public function actionIndex()
 	{
-    $this->layout = \frenzelgmbh\appcommon\controllers\AppController::adminlayout;
-		return $this->render('index');
+    return $this->render('index');
 	}
 
   /**
@@ -66,7 +65,7 @@ class DefaultController extends AppController
    */
   public function actionTest()
   {
-    $this->layout = \frenzelgmbh\appcommon\controllers\AppController::adminlayout;
+    $this->layout = 'column2';
     return $this->render('test');
   }
 
