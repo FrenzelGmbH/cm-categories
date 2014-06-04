@@ -138,7 +138,7 @@ class categories extends \yii\db\ActiveRecord
         $options = self::find()->where(['mod_table'=>$module])->orderBy('name')->asArray()->all();
         foreach($options AS $option)
         {
-            $returnme[] = ['id'=>$option->id,'name' => $option->name];
+            $returnme[] = ['id'=>$option['id'],'name' => $option['name']];
         }
         return $returnme;
     }
