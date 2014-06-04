@@ -134,8 +134,12 @@ class categories extends \yii\db\ActiveRecord
     public static function jsCategories($module)
     {
         $returnme = [];
-        $returnme[] = ['0' => 'NONE AVAILABLE! Gibts net!'];
-        $returnme[] = ArrayHelper::map(self::find()->where(['mod_table'=>$module])->orderBy('name')->asArray()->all(), 'id', 'name');
+        $returnme[] = ['id'=>'0','name' => 'NONE AVAILABLE! Gibts net!'];
+        $options = self::find()->where(['mod_table'=>$module])->orderBy('name')->asArray()->all();
+        foreach($options AS $option)
+        {
+            $returnme[] = ['id'=>$option->id,'name' => $option->name];
+        }
         return $returnme;
     }
 
