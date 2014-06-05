@@ -7,7 +7,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\Json;
 
 use frenzelgmbh\appcommon\controllers\AppController;
-use frenzelgmbh\cmcategories\models\Catgegories;
+use frenzelgmbh\cmcategories\models\Categories;
 
 class DefaultController extends AppController
 {

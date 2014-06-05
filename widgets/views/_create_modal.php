@@ -24,7 +24,7 @@ opencategoriesmod = function(){
     return false;
 };
 
-$('#mod_address_add').on('click',opencategoriesmod);
+$('#mod_categories_add').on('click',opencategoriesmod);
 
 MODALJS;
 
@@ -33,12 +33,12 @@ MODALJS;
 ?>
 
 <?= Html::a(\Yii::t('app','Create'), [
-    '/categories/default/createajax',
+    '/categories/default/create',
     'module' => $module, 
     'id' => $id,
   ], 
   [
     'class' => 'btn btn-info navbar-btn',
-    'id' => 'mod_address_add'
+    'id' => 'mod_categories_add'
   ]
 );?>

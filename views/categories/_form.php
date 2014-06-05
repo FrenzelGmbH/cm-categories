@@ -30,7 +30,7 @@ use kartik\widgets\DepDrop;
     	]);
      ?>
     
-    <div class="form-group">
+    <div class="form-group navbar navbar-primary">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
