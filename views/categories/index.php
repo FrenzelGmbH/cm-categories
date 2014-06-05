@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     $sideMenu = array();
     $sideMenu[] = array('icon'=>'book','label'=>Yii::t('cm-categories','Categories'),'url'=>Url::to(array('/categories/categories/index')));
     $sideMenu[] = array('icon'=>'plus','label'=>Yii::t('cm-categories','New Category'),'url'=>Url::to(array('/categories/categories/create')));
-    $sideMenu[] = array('icon'=>'info','label'=>Yii::t('cm-categories','Playground'),'url'=>Url::to(array('/categories/default/test')));
+    $sideMenu[] = array('icon'=>'tower','label'=>Yii::t('cm-categories','Playground'),'url'=>Url::to(array('/categories/default/test')));
 
     echo SideNav::widget([
       'type' => SideNav::TYPE_INFO,
