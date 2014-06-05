@@ -30,20 +30,20 @@ class DefaultController extends AppController
         'rules' => [
           [
             'allow'=>true,
+            'actions'=>array(              
+              'test',
+              'create'
+            ),
+            'roles'=>array('?'),
+          ],
+          [
+            'allow'=>true,
             'actions'=>array(
               'index',
               'test',
               'create'
             ),
             'roles'=>array('@'),
-          ],
-          [
-            'allow'=>true,
-            'actions'=>array(              
-              'test',
-              'create'
-            ),
-            'roles'=>array('?'),
           ]
         ]
       ]
