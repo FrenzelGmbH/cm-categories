@@ -46,7 +46,7 @@ Pjax::begin();
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            'id',
+            //'id',
             'name',
             'user_id',
             [
