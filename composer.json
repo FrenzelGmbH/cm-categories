@@ -20,9 +20,6 @@
     }
   ],
   "minimum-stability": "dev",
-  "require": {
-    "frenzelgmbh/appcommon":"dev-master"
-  },
   "autoload": {
     "psr-4": {
       "frenzelgmbh\\cmcategories\\": ""
